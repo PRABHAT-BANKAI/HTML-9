@@ -1,0 +1,95 @@
+<!-- <Table> <Tr> <Th> <Td> <Caption><Thead><Tbody><Tfoot>
+  Table Tag Attribute : Cellspacing=”...” Cellpadding=”...” 
+  Border=”...” Width=”...” Height=”...” Bgcolor=”...”Td, Th Tag Attribute : Colspan, Rowspan, Bgcolor -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <table border="">
+       table row 
+      <tr>
+     table data 
+         <td>S.no</td>
+        <td>Name</td>
+        <td>Subject</td>
+        <td>marks</td>
+
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Prabhat</td>
+        <td>Coding</td>
+        <td>0</td>
+      </tr>
+
+    </table> -->
+
+    <table
+      cellpadding="20px"
+      cellspacing="20px"
+      bgcolor="orange"
+      border=""
+      width="250px"
+      height="400px"
+    >
+      <caption>
+        Result
+      </caption>
+      <!-- table heading -->
+      <thead>
+        <tr bgcolor="aqua">
+          <th bgcolor="yellow">S.no</th>
+          <th>Name</th>
+          <th>Subject</th>
+          <th>Marks</th>
+          <th>powers</th>
+        </tr>
+      </thead>
+
+      <!-- table body -->
+      <tbody>
+        <tr>
+          <td bgcolor="yellow">1</td>
+          <td>Batman</td>
+          <td colspan="2">Engineer</td>
+          <td rowspan="3">55</td>
+        </tr>
+
+        <tr>
+          <td>2</td>
+          <td>Superman</td>
+          <td>Doctor</td>
+          <td>90</td>
+        </tr>
+
+        <tr>
+          <td>3</td>
+          <td>Spiderman</td>
+          <td>Cook</td>
+          <td>78</td>
+        </tr>
+      </tbody>
+      <!-- table footer -->
+      <tfoot>
+        <tr>
+          <td colspan="3">Total</td>
+          <td rowspan="2">223</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <table bgcolor="purple" cellpadding=""  width="800px" >
+      <tr>
+        <td>First name</td>
+        <td><input type="text" />(max 3 characters)</td>
+        <!-- example of nested table <td>
+          <table></table>
+        </td> -->
+      </tr>
+    </table>
+  </body>
+</html>
