@@ -1,0 +1,68 @@
+<!-- Inline Css, Internal Css, External Css@Media, @Key
+FramesDetails: <Tag>, .Class, #IdUse Of Inline Css -->
+
+<!-- priority of css: inline > internal > external -->
+<!-- priority of selectors: id > class > tag name > universal -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+
+      /* Internal CSS */
+      /* by tag Name */
+      /* universal selector */
+*{
+  text-decoration: underline;
+  font-family: Arial, sans-serif;
+}
+
+
+
+      h2 {  
+        color: green;
+      }
+      /* by class name */
+      .text {
+        color: darkorchid;
+      }
+      p {
+        color: blue;
+      }
+      /* by id name */
+      #heading{
+        color:yellow;
+      }
+      .bold{
+        font-weight: 900;
+
+      }
+      .size{
+        font-size: 45px;
+        font-style: italic;
+        border-style: dashed;
+      }
+      
+  
+    </style>
+  </head>
+  <body>
+    <p>
+      Cascading Style Sheets is a style sheet language used for specifying the
+      presentation and styling of a document written in a markup language such
+      as HTML or XML.
+    </p>
+    <p style="color: crimson;background-color: yellow;">Inline CSS</p>
+    <h2>Internal CSS</h2>
+    <ol>
+      <li>CSS is more flexible and easy to manage</li>
+      <li>CSS is compatible with all major browsers</li>
+      <li>CSS can be used to style HTML elements</li>
+    </ol>
+    <p  class="text bold size">hello from class selector</p>
+    <p id="heading">hello from id selector</p>
+  </body>
+</html>
