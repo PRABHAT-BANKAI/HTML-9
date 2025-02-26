@@ -1,0 +1,100 @@
+<!-- Use Of Internal Css
+ fontFamily-Font, Font-Size, Color, Font-Weight, Text-Align, Line-Height, Letter-Spacing, Word-Spacing, Text-Decoration, Font-Style, Text- Transform, Text-Indent
+Online Font Attachment -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Rubik+Bubbles&family=Sixtyfour+Convergence&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      h2 {
+        /* text-align: center; */
+        font-family: monospace;
+        /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+      }
+      .title {
+        font-size: 25px;
+        color: rgb(44, 160, 206);
+        font-weight: 900;
+      }
+      .price {
+        background-color: yellow;
+        font-size: 20px;
+        line-height: 45px;
+        border-style: dashed;
+      }
+      .desc {
+        /* letter-spacing: 35px; */
+        word-spacing: 15px;
+        text-decoration: underline;
+        text-decoration: line-through;
+        text-decoration: overline;
+        font-style: italic;
+        font-style: oblique;
+        text-transform: capitalize;
+        text-transform: uppercase;
+        text-transform: lowercase;
+        text-indent: 45px;
+      }
+      .card {
+        height: 400px;
+        width: 300px;
+        border: 1px solid green;
+        padding: 25px;
+      }
+
+      .dancing-script-article {
+        font-family: "Dancing Script", serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+      }
+      .sixtyfour-convergence-article {
+        font-family: "Sixtyfour Convergence", serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-variation-settings: "BLED" 0, "SCAN" 0, "XELA" 0, "YELA" 0;
+      }
+      .rubik-bubbles-regular {
+        font-family: "Rubik Bubbles", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h2>Adidas</h2>
+      <p class="title">Shoes</p>
+      <p class="price">Price : 5000</p>
+      <p class="desc">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At laudantium
+        hic nostrum et voluptatum, exercitationem perferendis quam, sapiente,
+        quisquam ad distinctio dolor amet culpa quae magni eveniet sint.
+        Quibusdam, iste.
+      </p>
+      <button>Buy</button>
+    </div>
+    <div>
+      <article class="dancing-script-article sixtyfour-convergence-article rubik-bubbles-regular">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+        corrupti qui inventore ipsum recusandae voluptatibus nulla similique
+        soluta, magni dolores illum veniam molestiae, ex omnis aperiam
+        accusamus, accusantium officiis nisi.
+      </article>
+    </div>
+  </body>
+</html>
