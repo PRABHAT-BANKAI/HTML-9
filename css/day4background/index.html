@@ -1,0 +1,52 @@
+<!-- Background
+Color, Gradirents, Position, Size,
+ Attachment, Repeat, Image, Background-Blend- Mode -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .box {
+        height: 200px;
+        width: 200px;
+        border: 1px solid black;
+      }
+      .box1 {
+        background-color: blueviolet;
+        color: aqua;
+        font-size: 25px;
+      }
+      /* linearGradient
+      radial Gradient
+      conic Gradient */
+      .box2{
+        background: linear-gradient(red,yellow,green,black);
+        background: radial-gradient(yellow,green,blue,aqua);
+        background: conic-gradient(red,yellow,purple,green);
+        background: linear-gradient(321deg, rgba(63,94,251,1) 0%, rgba(195,70,252,1) 100%);
+        background: radial-gradient(circle, rgba(146,79,252,1) 7%, rgba(79,252,119,1) 36%, rgba(252,122,79,1) 63%, rgba(0,0,0,1) 100%);
+      }
+      .box3{
+    background-image: url("image.jpeg"),url("image.jpeg");
+    background-repeat: no-repeat;
+   
+    height: 200px;
+    width: 500px;
+    background-position: center;
+    background-size: contain;
+    /* background-size: cover; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box box1">Background color</div>
+    <div class="box box2">Gradient background</div>
+    <div class="box  box3">Background Image</div>
+  </body>
+</html>
