@@ -1,0 +1,76 @@
+<!-- Box Modal
+Width, Height, Background-Color
+Content, Padding, Border, Margin
+Box-Sizing
+
+Border, Border-Radius
+Display Property
+Block, Inline, Inline-Block, None -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      /* content-box bydefault nature */
+      box-sizing: border-box;
+    }
+    .container{
+      width: 200px;
+      height: 200px;
+      /* width: 100vw; */
+      /* height: 80%; */
+      height: 50vh;
+      background-color: lightblue;
+      padding-left: 55px;
+      padding-right: 55px;
+      padding-top: 44px;
+      padding-bottom: 55px;
+      /* all arounder */
+      padding: 25px;
+      /* top bottom and left right */
+      padding: 20px 50px;
+      /* top right bottom left */
+      padding: 10px 20px 30px 55px; 
+      border-width: 22px;
+      border-style: dashed;
+      border-color: green;
+      /* width style color in border */
+      border-left:  25px solid green;
+      border-right: 2px dashed red; 
+      border : 25px solid blue;
+      margin: 55px;
+
+    }
+    p{
+      background-color: red;;
+      font-size: 4em;
+  
+     
+    }
+    .box2{
+ height: 250px;
+ width: 250px;
+ background-color: yellow;
+ border: 5px solid red;
+ padding: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1> IN CSS Box Model we have content , padding, border,margin </h1>
+
+  <div class="container">
+<p>hello </p>
+  </div>
+
+
+  <div class="box2">
+    <h3>content</h3>
+  </div>
+</body>
+</html>
