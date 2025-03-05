@@ -1,0 +1,61 @@
+<!-- Selector div,P, Div P, Div > P:
+
+First Letter, :First Line, :First Child, :LastChild, :Nth Child(), :Nth Last Child(), ::Selection -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Descendant Combinator */
+      .box1 h2 {
+        color: red;
+      }
+      .box1 p {
+        color: rgb(0, 200, 255);
+      }
+      /* multi selector */
+      h1,h3,h4,h5{
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <p>main-heading1</p>
+    <p>main-heading2</p>
+    <p>main-heading3</p>
+    <div class="box1">
+      <h2>heading4</h2>
+      <p>heading1</p>
+      <p>heading2</p>
+      <p>heading3</p>
+      <div>
+        <h2>heading4</h2>
+        <p>sub-heading1</p>
+        <p>sub-heading2</p>
+        <p>sub-heading3</p>
+        <div>
+          <h2>heading4</h2>
+          <p>sub-sub-heading1</p>
+          <p>sub-sub-heading2</p>
+          <p>sub-sub-heading3</p>
+        </div>
+      </div>
+      <h2>heading4</h2>
+    </div>
+    <div class="box2">
+      <p>heading1</p>
+      <p>heading2</p>
+      <p>heading3</p>
+    </div>
+    <h1>
+      h1 tag
+    </h1>
+    <h3> h3tag</h3>
+    <h4>h4 tag</h4>
+    <h5>h5 tag</h5>
+    <h6> h6 tag</h6>
+  
+  </body>
+</html>
