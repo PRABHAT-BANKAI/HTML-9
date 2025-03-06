@@ -9,15 +9,48 @@ First Letter, :First Line, :First Child, :LastChild, :Nth Child(), :Nth Last Chi
     <title>Document</title>
     <style>
       /* Descendant Combinator */
-      .box1 h2 {
+      /* .box1 h2 {
         color: red;
       }
       .box1 p {
         color: rgb(0, 200, 255);
-      }
+      } */
       /* multi selector */
-      h1,h3,h4,h5{
+      h1,
+      h3,
+      h4,
+      h5 {
         color: green;
+      }
+
+      /* child selector  */
+      .box1 > div {
+        color: red;
+      }
+      article::first-letter {
+        color: purple;
+        font-size: 45px;
+      }
+      .para1::first-line {
+        background-color: yellow;
+      }
+      h2:first-child {
+        color: aqua;
+      }
+      p:last-child {
+        color: blue;
+      }
+
+      p:nth-child(2) {
+        background-color: orange;
+      }
+
+      p:nth-last-child(2) {
+        color: rgb(34, 61, 168);
+      }
+      .para1::selection {
+        background-color: yellow;
+        color: red;
       }
     </style>
   </head>
@@ -26,15 +59,18 @@ First Letter, :First Line, :First Child, :LastChild, :Nth Child(), :Nth Last Chi
     <p>main-heading2</p>
     <p>main-heading3</p>
     <div class="box1">
-      <h2>heading4</h2>
+      <h2>heading4444</h2>
       <p>heading1</p>
       <p>heading2</p>
       <p>heading3</p>
+
       <div>
+        <h2>heading44</h2>
         <h2>heading4</h2>
         <p>sub-heading1</p>
         <p>sub-heading2</p>
         <p>sub-heading3</p>
+        <h2>hello css</h2>
         <div>
           <h2>heading4</h2>
           <p>sub-sub-heading1</p>
@@ -42,20 +78,33 @@ First Letter, :First Line, :First Child, :LastChild, :Nth Child(), :Nth Last Chi
           <p>sub-sub-heading3</p>
         </div>
       </div>
-      <h2>heading4</h2>
     </div>
     <div class="box2">
       <p>heading1</p>
       <p>heading2</p>
-      <p>heading3</p>
+      <p>hello</p>
+      <p>heading33333</p>
     </div>
-    <h1>
-      h1 tag
-    </h1>
-    <h3> h3tag</h3>
+    <h1>h1 tag</h1>
+    <h3>h3tag</h3>
     <h4>h4 tag</h4>
     <h5>h5 tag</h5>
-    <h6> h6 tag</h6>
-  
+    <h6>h6 tag</h6>
+    <article>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit perferendis
+      temporibus velit quas autem exercitationem iusto saepe dignissimos
+      similique quis nisi, corrupti doloribus voluptas quasi est aperiam qui.
+      Distinctio, nisi!
+    </article>
+    <p class="para1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+      cupiditate ipsa est! Voluptatibus illum nisi eveniet, nam cum eligendi
+      molestias placeat repellat? Quia sapiente laboriosam temporibus maiores
+      ducimus iusto officiis! Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Assumenda vitae nostrum obcaecati, cupiditate dicta, consequatur
+      exercitationem explicabo nisi quasi aliquid possimus voluptate? Nihil
+      dolore assumenda magni quia amet nobis nulla!
+    </p>
+    <h2>hello</h2>
   </body>
 </html>
