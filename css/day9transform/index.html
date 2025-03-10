@@ -1,0 +1,57 @@
+<!-- Introduction Of CSS3
+Browser Support : Firefox (Moz), Chrome, Safari, Opera (Webkit) Scale, Rotate, Skew, Translate -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .box1 {
+        width: 100px;
+        height: 50px;
+        background-color: red;
+        padding: 45px;
+
+        /* scale is doing zoom in zoom out */
+        /* transform: scale(5); */
+        /* transform: rotate(170deg); */
+        /* transform: skew(87deg); */
+        /* transform: translate(50px); */
+
+        animation-name: magic-box;
+        animation-duration: 5s;
+        animation-delay: 2s;
+        animation-iteration-count: 2;
+        animation-direction: alternate;
+      }
+
+      @keyframes magic-box {
+        from {
+          /* margin-left: 0px;
+          margin-top: 0px; */
+          width: 100px;
+        }
+        to {
+          /* margin-left: 300px;
+          transform: rotate(1200deg);
+          background-color: green;
+          /* transform: skew(1200deg); 
+          margin-top: 200px;
+          border-radius: 50%;
+          font-size: 25px; */
+          width: 800px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">box1</div>
+  </body>
+</html>
