@@ -1,0 +1,79 @@
+<!-- Before, After, Transition & Hover::Before, ::After 
+ transition Duration,
+ Timing Function, Delay, Property:Hover, :Focus -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        width: 200px;
+        height: 50px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 1.5s, color 1.5s;
+      }
+
+      button:hover {
+        background-color: #456ba0;
+        color: rgb(255, 255, 255);
+      }
+
+      /* .btn-2::before {
+        content: "🙂";
+      }
+      .btn-2::after {
+        content: "➡️";
+      } */
+
+      .btn-2:hover::after {
+        content: ">>";
+        color: red;
+      }
+      .btn-2:hover::before {
+        content: "<<";
+        color: blue;
+      }
+      .box1 {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        transition: background-color 1s;
+      }
+
+      .box1:hover {
+        background-color: blue;
+        width: 500px;
+        height: 400px;
+        transition: all 4s;
+        transition-timing-function: steps(6, end);
+      }
+      input:focus {
+        outline-color: blue;
+        background-color: yellow;
+        color: red;
+        transition: background-color 1s, color 1s, outline-color 3s;
+      }
+      a:visited {
+        color: green;
+      }
+      a:active {
+        color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn-1">click me</button>
+
+    <button class="btn-2">click me</button>
+
+    <div class="box1">box1</div>
+    <input type="text" />
+    <br />
+    <a href="https://www.w3schools.com/cssref/sel_hover.php"> anchor tag </a>
+  </body>
+</html>
