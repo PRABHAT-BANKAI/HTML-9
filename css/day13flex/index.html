@@ -1,0 +1,75 @@
+<!-- 	
+Display Flex (Parent Property)Display: Flex
+
+FlexDirection (Row, Row Reverse, Column, Column Reverse)
+
+Flex Wrap (Nowrap, Wrap, Wrap Reverse)
+
+Flex Flow (Flex Direction Flex Wrap)
+
+Flexbox is a one-dimensional layout method for arranging items in rows or columns. Items flex (expand) to fill additional space or shrink to fit into smaller spaces.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Set the flex container */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .flex-container {
+        padding-bottom: 10px;
+        height: 600px;
+        width: 100%;
+        background-color: yellow;
+        display: flex;
+        /* flex-direction: column;
+        flex-direction: row;
+        flex-direction: row-reverse;
+        flex-direction: column-reverse; */
+        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        flex-wrap: wrap-reverse;
+        flex-flow: column-reverse wrap;
+        gap: 5px;
+      }
+      .flex-item {
+        height: 100px;
+        width: 100px;
+        background-color: rgb(255, 174, 0);
+        /* margin-top: 5px;
+        margin-right: 5px; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex-item">1</div>
+      <div class="flex-item">2</div>
+      <div class="flex-item">3</div>
+      <div class="flex-item">4</div>
+      <div class="flex-item">5</div>
+      <div class="flex-item">6</div>
+      <div class="flex-item">7</div>
+      <div class="flex-item">8</div>
+      <div style="z-index: -1" class="flex-item">9</div>
+      <div class="flex-item">5</div>
+      <div class="flex-item">1</div>
+      <div class="flex-item">2</div>
+      <div class="flex-item">3</div>
+      <div class="flex-item">4</div>
+      <div class="flex-item">5</div>
+      <div class="flex-item">1</div>
+      <div class="flex-item">2</div>
+      <div class="flex-item">3</div>
+    </div>
+  </body>
+</html>
+
+<!-- https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Flexbox/flex_terms.png -->
