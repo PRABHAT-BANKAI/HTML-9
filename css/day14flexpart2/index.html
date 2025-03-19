@@ -1,0 +1,105 @@
+<!--
+Display Flex (Parent Property)
+Justify-Content (Flex-Start, Flex-End, Center, Space-Between, Space-Around, Space-Evenly)
+Align-Items (Stretch, Center, Flex-Start, Flex-End, Baseline)
+Align-Content (Stretch, Center, Flex-Start, Flex-End, Space-Between, Space-Around, Space-Evenly)  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .parent {
+        height: 600px;
+        width: 100%;
+        background-color: yellow;
+        display: flex;
+        /* justify-content: flex-start; */
+        /* justify-content: center; */
+        /* justify-content: space-between;
+        justify-content: space-around;
+        justify-content: space-evenly; */
+        /* align-items: center;
+        align-items: flex-end; */
+        /* align-items: stretch; */
+        /* align-items: baseline; */
+        flex-wrap: wrap;
+        align-content: flex-start;
+        align-content: flex-end;
+        align-content: center;
+        align-content : space-around;
+        align-content : space-between;
+        align-content : space-evenly;
+        align-content: stretch;
+      
+      }
+      .box {
+   
+        width: 100px;
+      }
+      .child1 {
+        background-color: aqua;
+      }
+      .child2 {
+        background-color: rgb(0, 76, 255);
+      }
+      .child3 {
+        background-color: rgb(255, 179, 0);
+      }
+      .child4 {
+        background-color: rgb(0, 255, 30);
+      }
+      nav{
+        height: 70px;
+        background-color:greenyellow;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10% ;
+        align-items: center;
+
+      }
+      .navbar{
+        width: 300px;
+        background-color: crimson;
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child1 box">Child 1</div>
+      <div class="child2 box">Child 2</div>
+      <div class="child3 box">Child 3</div>
+      <div class="child4 box">Child 4</div>
+      <div class="child1 box">Child 1</div>
+      <div class="child2 box">Child 2</div>
+      <div class="child3 box">Child 3</div>
+      <div class="child4 box">Child 4</div>
+      <div class="child1 box">Child 1</div>
+      <div class="child2 box">Child 2</div>
+      <div class="child3 box">Child 3</div>
+      <div class="child4 box">Child 4</div>
+      <div class="child1 box">Child 1</div>
+      <div class="child2 box">Child 2</div>
+      <div class="child3 box">Child 3</div>
+      <div class="child4 box">Child 4</div>
+    </div>
+    <nav>
+      <h1>Crypto</h1>
+      <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+      </div>
+    </nav>
+  </body>
+</html>
