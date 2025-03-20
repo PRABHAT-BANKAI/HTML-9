@@ -1,0 +1,64 @@
+<!-- Display Flex (Child Property)
+Flex-Basis, Flex-Grow, Flex-Shrink, Order
+Align-Self (Stretch, Center, Flex-Start, Flex-End, Baseline) -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .flex-container {
+        display: flex;
+        height: 100vh;
+        background-color: yellow;
+        width: 100%;
+      }
+      .flex {
+        height: 200px;
+        width: 200px;
+      }
+      .item1 {
+        background-color: aqua;
+        /* flex-shrink: 2; */
+        order: 50;
+
+      }
+      .item2 {
+        background-color: blue;
+        /* flex-grow: 4; */
+        align-self: center;
+      }
+      .item3 {
+        background-color: green;
+        /* flex-grow: 1; */
+        order: 51;
+      }
+      .item4 {
+        background-color: red;
+        /* flex-shrink: 5; */
+        order: -4;
+      }
+      .item5 {
+        background-color: orange;
+        /* flex-grow: 5; */
+        /* flex-basis: 500px; */
+        order: -5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex item1">Item 1</div>
+      <div class="flex item2">Item 2</div>
+      <div class="flex item3">Item 3</div>
+      <div class="flex item4">Item 4</div>
+      <div class="flex item5">Item 5</div>
+    </div>
+  </body>
+</html>
