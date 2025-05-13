@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .text {
+        color: red;
+      }
+      .main h2 {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>javascript</h1>
+    <p>4+4</p>
+
+    <!-- <span id="heading"></span> -->
+    <div id="heading"></div>
+
+    <script>
+      console.log("hello world");
+      document.write("<h2 class='text'> hi from javascript</h2>");
+
+      let head = document.getElementById("heading");
+      //innertext
+      // innerHTML can give html tags
+      head.innerHTML = "<h2 >Flipkart</h2> <h3> amazon</h3>";
+
+      head.style.backgroundColor = "yellow";
+      head.className = "main";
+
+
+      // alert("pop up ")
+    </script>
+  </body>
+</html>
