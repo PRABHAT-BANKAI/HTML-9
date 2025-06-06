@@ -30,6 +30,7 @@ console.log(string);
 
 // even numbers or odd number dono find krne 50 sae 100
 let sum2 = 0;
+
 for (let i = 50; i <= 100; i++) {
   sum2 += i;
 }
