@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="text"></p>
+    <button id="back">Back</button>
+    <button id="next">Next</button>
+    <script>
+      let text = document.querySelector("#text");
+      let back = document.querySelector("#back");
+      let next = document.querySelector("#next");
+
+      let arr = ["javascript", "HTML", "CSS"];
+
+      let index = 0;
+
+      text.innerText = arr[index];
+
+      next.addEventListener("click", () => {
+        index++;
+        text.innerText = arr[index];
+      });
+    </script>
+  </body>
+</html>
