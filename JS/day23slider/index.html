@@ -6,7 +6,7 @@
     <title>Document</title>
   </head>
   <body>
-    <p id="text"></p>
+    <img id="text" src="" />
     <button id="back">Back</button>
     <button id="next">Next</button>
     <script>
@@ -14,15 +14,31 @@
       let back = document.querySelector("#back");
       let next = document.querySelector("#next");
 
-      let arr = ["javascript", "HTML", "CSS"];
+      let arr = [
+        "https://www.animaker.com/hub/wp-content/uploads/2023/03/Mickey_Mouse_Disney_1.webp",
+        "https://www.animaker.com/hub/wp-content/uploads/2023/03/Tom_and_Jerry_-_MP.webp",
+        "https://www.animaker.com/hub/wp-content/uploads/2023/03/Bugs_bunny.webp",
+      ];
 
       let index = 0;
 
-      text.innerText = arr[index];
+      text.src = arr[index];
 
       next.addEventListener("click", () => {
         index++;
-        text.innerText = arr[index];
+
+        if (index == arr.length) {
+          index = 0;
+        }
+        text.src = arr[index];
+      });
+      back.addEventListener("click", () => {
+        if (index == 0) {
+          index = arr.length;
+        }
+        index--;
+
+        text.src = arr[index];
       });
     </script>
   </body>
