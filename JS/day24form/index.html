@@ -9,28 +9,117 @@
     <h1>Form validation</h1>
 
     <form action="">
-      <label for="">
-        Name:
-        <input
-          id="textInput"
-          type="text"
-          placeholder="Enter your user name"
-          onblur="userFun()"
-        />
-      </label>
-      <p id="error1"></p>
+      <div>
+        <label for="">
+          Name:
+          <input
+            id="textInput"
+            type="text"
+            placeholder="Enter your user name"
+            onkeyup="userFun()"
+          />
+        </label>
+        <p id="error1"></p>
+      </div>
+      <div>
+        <label for="">
+          Email:
+          <input
+            id="emailInput"
+            type="email"
+            placeholder="Enter your user email"
+            onkeyup="emailFun()"
+          />
+        </label>
+        <p id="error2"></p>
+      </div>
+      <div>
+        <label for="">
+          Password:
+          <input
+            id="passwordInput"
+            type="password"
+            placeholder="Enter your user password"
+            onkeyup="passwordFun()"
+          />
+        </label>
+        <p id="error3"></p>
+      </div>
+
       <button>Submit</button>
     </form>
 
     <script>
       let inputText = document.querySelector("#textInput");
+      let email = document.querySelector("#emailInput");
+      let password = document.querySelector("#passwordInput");
+
       let err1 = document.querySelector("#error1");
+      let err2 = document.querySelector("#error2");
+      let err3 = document.querySelector("#error3");
+      let form = document.querySelector("form");
+      let validation = false;
+
       function userFun() {
         console.log(inputText.value);
-        if ((inputText.value == "")) {
+        if (!inputText.value.trim()) {
           err1.innerText = "invalid user Name";
           err1.style.color = "red";
+          validation = false;
+        } else {
+          err1.innerText = "";
+          err1.style.color = "";
+          validation = true;
         }
+      }
+      function emailFun() {
+        //regex
+        let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!regex.test(email.value.trim())) {
+          err2.innerText = "invalid email";
+          err2.style.color = "red";
+          validation = false;
+        } else {
+          err2.innerText = "";
+          err2.style.color = "";
+          validation = true;
+        }
+      }
+      function passwordFun() {
+        let regex =
+          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+        if (!regex.test(password.value.trim())) {
+          err3.innerText =
+            "password should be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character";
+          err3.style.color = "red";
+          validation = false;
+        } else {
+          err3.innerText = "";
+          err3.style.color = "";
+          validation = true;
+        }
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault(); // helps in cannot refresh the page
+        let validation = valFun();
+
+        if (validation) {
+          inputText.value = "";
+          email.value = "";
+          password.value = "";
+          alert("login successfully");
+        }
+      });
+
+      function valFun() {
+        console.log("hello");
+        userFun();
+        emailFun();
+        passwordFun();
+
+        return validation;
       }
     </script>
   </body>
