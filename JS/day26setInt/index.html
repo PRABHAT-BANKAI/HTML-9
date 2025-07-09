@@ -1,0 +1,37 @@
+<!-- 
+ SETTIMEOUT Modal show web page load setInterval, clearinterval Automatic slider -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log("hello");
+
+      // two operations syncronous  and  asyncronous
+
+      // first run all syncronous code then run asyncronous code
+
+      // asyncronous operation (settimeout , setinterval ,)
+      setTimeout(() => {
+        console.log("i will come after 5 sec");
+      });
+
+      let count = 1;
+      let id = setInterval(() => {
+        console.log(count);
+        console.log("set Interval");
+        if (count == 5) {
+          clearInterval(id);// setInterval function runs infinite but clear Interval function help to stop function 
+        }
+        count++;
+      }, 2000);
+
+      console.log("game");
+    </script>
+  </body>
+</html>

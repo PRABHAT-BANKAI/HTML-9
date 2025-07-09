@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="text"></h1>
+
+    <script>
+      let array = ["javascript", "css", "html", "node"];
+
+      let count = 0;
+      let text = document.querySelector("#text");
+
+      text.innerText = array[count];
+
+      setInterval(() => {
+        console.log("hello")
+        if (count == array.length ) {
+          count = 0;
+        }
+        text.innerText = array[count];
+        count++;
+      }, 1000);
+    </script>
+  </body>
+</html>
