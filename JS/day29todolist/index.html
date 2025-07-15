@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Todolist</h1>
+    <input id="input-text" type="text" />
+    <button id="btn">Add</button>
+    <div class="container"></div>
+
+    <button id="clear-local">Clear local storage</button>
+    <button id="clear-key">Remove local storage</button>
+
+    <script>
+      let clearLocal = document.querySelector("#clear-local");
+      let clearKey = document.querySelector("#clear-key");
+      let inputText = document.querySelector("#input-text");
+      let button = document.querySelector("#btn");
+      let container = document.querySelector(".container");
+      let todolist = JSON.parse(localStorage.getItem("todoData")) || [];
+
+      button.addEventListener("click", () => {
+        // console.log(inputText.value);
+        todolist.push(inputText.value);
+        localStorage.setItem("todoData", JSON.stringify(todolist));
+        showData();
+        inputText.value = "";
+        // console.log(todolist);
+      });
+
+      function showData() {
+        container.innerHTML = "";
+        todolist.forEach((item, index) => {
+          let card = document.createElement("div");
+          let paragraph = document.createElement("p");
+          paragraph.innerText = item;
+          card.append(paragraph);
+          container.append(card);
+        });
+      }
+
+      showData();
+
+      clearLocal.addEventListener("click", () => {
+        localStorage.clear();
+      });
+      clearKey.addEventListener("click", () => {
+        localStorage.removeItem("todoData");
+      });
+    </script>
+  </body>
+</html>
