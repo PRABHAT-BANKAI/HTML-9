@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>another page</h1>
+    <div class="container"></div>
+    <script>
+      let todolist = JSON.parse(localStorage.getItem("todoData"));
+      let cont = document.querySelector(".container");
+      todolist.forEach((element) => {
+        let para = document.createElement("p");
+        para.innerText = element;
+        cont.append(para);
+      });
+    </script>
+  </body>
+</html>

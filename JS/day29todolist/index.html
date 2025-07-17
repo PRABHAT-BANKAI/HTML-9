@@ -7,6 +7,7 @@
   </head>
   <body>
     <h1>Todolist</h1>
+    <a href="./extra.html">another page</a>
     <input id="input-text" type="text" />
     <button id="btn">Add</button>
     <div class="container"></div>
@@ -35,9 +36,25 @@
         container.innerHTML = "";
         todolist.forEach((item, index) => {
           let card = document.createElement("div");
+          let edit = document.createElement("button");
+          let del = document.createElement("button");
+          edit.textContent = "edit";
+          del.textContent = "delete";
+          del.addEventListener("click", () => {
+            let filter = todolist.filter((item, i) => i != index);
+            todolist = filter;
+            localStorage.setItem("todoData", JSON.stringify(todolist));
+            showData();
+          });
+          edit.addEventListener("click", () => {
+            let promptData = prompt(todolist[index]);
+            todolist[index] = promptData;
+            localStorage.setItem("todoData", JSON.stringify(todolist));
+            showData();
+          });
           let paragraph = document.createElement("p");
           paragraph.innerText = item;
-          card.append(paragraph);
+          card.append(paragraph, del, edit);
           container.append(card);
         });
       }
