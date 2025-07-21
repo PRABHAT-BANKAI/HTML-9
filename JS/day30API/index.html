@@ -1,0 +1,45 @@
+<!-- Ajax Introduction fetch API -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>API (application programming interface)</h1>
+    <button class="button">Dog Image Generate randomally</button>
+    <div class="container"></div>
+    <script>
+      let image = document.createElement("img");
+      let container = document.querySelector(".container");
+      let button = document.querySelector(".button");
+      let API_URL = "https://dog.ceo/api/breeds/image/random";
+
+      button.addEventListener("click", () => {
+        show();
+      });
+
+      // asyncrounous nature
+      function show() {
+        fetch(API_URL)
+          .then((res) => res.json())
+          .then((res) => {
+            let dogData = res;
+            image.src = dogData.message;
+            image.style.height= "200px"
+            container.append(image)
+          })
+          .catch((error) => {
+            console.log(error, "error");
+          })
+          .finally(() => {
+            console.log("finally");
+          });
+      }
+
+      show();
+      console.log("hello"); // syncronous
+    </script>
+  </body>
+</html>
