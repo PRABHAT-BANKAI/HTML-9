@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Dog APi</h1>
+    <div>
+      <input id="text" type="text" placeholder="Enter your dog name" />
+      <button id="btn">search</button>
+    </div>
+    <img id="image" src="" alt="" height="200px" />
+    <script>
+      let text = document.querySelector("#text");
+      let btn = document.querySelector("#btn");
+      let image = document.querySelector("#image");
+
+      btn.addEventListener("click", () => {
+        show();
+      });
+
+      // function show() {
+      //   if (!text.value.trim()) {
+      //     alert("first you have write name");
+      //     return;
+      //   }
+      //   let API = `https://dog.ceo/api/breed/${text.value}/images/random`;
+      //   fetch(API)
+      //     .then((res) => {
+      //       return res.json();
+      //     })
+      //     .then((res) => {
+      //       console.log(res);
+      //       image.src = res.message;
+      //     })
+      //     .catch((error) => {
+      //       console.log(error);
+      //     });
+
+      //     text.value = ""
+      // }
+
+      // async await ( its a feature from es6)
+
+      async function show() {
+        // asyncronous
+        if (!text.value.trim()) {
+          alert("first you have write name");
+          return;
+        }
+        try {
+          let API = `https://dog.ceo/api/breed/${text.value}/images/random`;
+
+          let response = await fetch(API);
+          response = await response.json();
+          console.log(response);
+
+          if (response.status == "error") {
+            throw "you have write proper name of dog";
+            return;
+          }
+          image.src = response.message;
+          text.value = "";
+        } catch (error) {
+          console.log(error, "error");
+        }
+      }
+    </script>
+  </body>
+</html>
