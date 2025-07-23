@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Movie DATA</h1>
+
+    <div class="container"></div>
+
+    <div>
+      <!-- <p>Title: <span id="title"></span></p>
+      <p>Description: <span id="desc"></span></p>
+      <img id="image" src="" alt="" /> -->
+    </div>
+    <script>
+      // let title = document.querySelector("#title");
+      // let desc = document.querySelector("#desc");
+      // let image = document.querySelector("#image");
+
+      async function show() {
+        const url =
+          "https://my-json-server.typicode.com/horizon-code-academy/fake-movies-api/movies";
+        const options = {
+          method: "GET",
+          headers: {
+            "x-rapidapi-key":
+              "0190d31adamsh58a693a760a401bp145c8ajsn0513254521ed",
+            "x-rapidapi-host": "movies-ratings2.p.rapidapi.com",
+          },
+        };
+
+        try {
+          const response = await fetch(url);
+          const result = await response.json();
+
+          console.log(result);
+
+          let container = document.querySelector(".container");
+          result.forEach((element, index) => {
+            let card = document.createElement("div");
+            let poster = document.createElement("img");
+            poster.style.height = "200px";
+            poster.src = element.Poster;
+            let title = document.createElement("p");
+            title.innerText = element.Title;
+            let year = document.createElement("p");
+            year.innerText = element.Year;
+            card.append(poster, title, year);
+            container.append(card);
+          });
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      show();
+    </script>
+  </body>
+</html>
