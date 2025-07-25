@@ -22,7 +22,8 @@
           alert("first put state name or city name");
           return;
         }
-        let url = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${text.value}`;
+
+        let url = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${text.value }`;
         let apikey = "ee00f0931ee9d5bf60ca286cbd6c50f1";
 
         try {
@@ -39,6 +40,12 @@
       }
 
       search.addEventListener("click", getWeather);
+
+
+
+      getWeather()
+
+ 
     </script>
   </body>
 </html>
