@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Import and export</h1>
+
+    <script type="module">
+      import { sum, sub } from "./sum.js";
+      import doremon from "./multi.js";
+
+      sum(12, 6);
+      sub(12, 6);
+
+      console.log(doremon(2, 3));
+       console.log(doremon(2, 5));
+    </script>
+  </body>
+</html>
