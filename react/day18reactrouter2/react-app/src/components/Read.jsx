@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate, useParams } from "react-router";
+import { productContext } from "../App";
 
 const Read = () => {
+  const { data, setData } = useContext(productContext);
   const { id } = useParams();
   const navigate = useNavigate();
   console.log(id);
@@ -12,9 +14,9 @@ const Read = () => {
 
   return (
     <div>
-      <h2>TItle:</h2>
-      <h3>Price:</h3>
-      <h4>Category</h4>
+      <h2>TItle:{data[id].title}</h2>
+      <h3>Price: {data[id].price}</h3>
+      <h4>Category {data[id].category}</h4>
       <button onClick={handleBack}>back</button>
     </div>
   );

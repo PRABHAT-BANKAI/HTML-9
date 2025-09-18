@@ -1,15 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router";
+import { productContext } from "../App";
 
 const Home = () => {
-  const [data, setData] = useState(
-    JSON.parse(localStorage.getItem("productData")) || []
-  );
+  const { data, setData } = useContext(productContext);
+
+  console.log(data, "data");
+
   const [inputsText, setInputsText] = useState({
     title: "",
     price: "",
     category: "",
   });
+
+  function handleDelete(id) {
+    const filterData = data.filter((element, index) => index != id);
+    setData(filterData);
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -27,10 +34,6 @@ const Home = () => {
       category: "",
     });
   }
-
-  useEffect(() => {
-    localStorage.setItem("productData", JSON.stringify(data));
-  }, [data]);
 
   return (
     <div>
@@ -94,7 +97,13 @@ const Home = () => {
                     <button>read</button>
                   </Link>
                   <button>Edit</button>
-                  <button>Delete</button>
+                  <button
+                    onClick={() => {
+                      handleDelete(index);
+                    }}
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             );
