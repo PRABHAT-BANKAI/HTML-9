@@ -20,14 +20,13 @@ Align-Self (Stretch, Center, Flex-Start, Flex-End, Baseline) -->
         width: 100%;
       }
       .flex {
-        height: 200px;
+        /* height: 200px; */
         width: 200px;
       }
       .item1 {
         background-color: aqua;
         /* flex-shrink: 2; */
         order: 50;
-
       }
       .item2 {
         background-color: blue;
@@ -38,6 +37,7 @@ Align-Self (Stretch, Center, Flex-Start, Flex-End, Baseline) -->
         background-color: green;
         /* flex-grow: 1; */
         order: 51;
+        align-self: baseline;
       }
       .item4 {
         background-color: red;
@@ -55,8 +55,18 @@ Align-Self (Stretch, Center, Flex-Start, Flex-End, Baseline) -->
   <body>
     <div class="flex-container">
       <div class="flex item1">Item 1</div>
-      <div class="flex item2">Item 2</div>
-      <div class="flex item3">Item 3</div>
+      <div class="flex item2">
+        Item 2 Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Molestiae blanditiis odit beatae cupiditate non distinctio iste, modi
+        voluptas temporibus? Ut autem ipsa quos atque quam at dolorum modi
+        deserunt delectus.
+      </div>
+      <div class="flex item3">
+        Item 3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
+        quisquam, consequatur sunt laborum natus aspernatur repellat iure
+        doloremque voluptatem eius sequi optio necessitatibus assumenda dolorem
+        recusandae, pariatur doloribus ducimus. Corrupti!
+      </div>
       <div class="flex item4">Item 4</div>
       <div class="flex item5">Item 5</div>
     </div>
