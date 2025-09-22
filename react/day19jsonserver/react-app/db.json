@@ -1,0 +1,22 @@
+{
+  "product": [
+    {
+      "id": "1",
+      "productName": "adidas",
+      "category": "shoes",
+      "price": 1200
+    },
+    {
+      "id": "89a0",
+      "productName": "nike",
+      "category": "shoes",
+      "price": "3000"
+    },
+    {
+      "id": "19e4",
+      "productName": "reebok",
+      "category": "clothes",
+      "price": "8900"
+    }
+  ]
+}
