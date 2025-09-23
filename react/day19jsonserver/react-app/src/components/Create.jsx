@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router";
 
 const Create = () => {
   const [inputText, setInputText] = useState({
@@ -34,6 +35,11 @@ const Create = () => {
   async function fetchData() {
     let response = await axios.get("http://localhost:3000/product");
     setData(response.data);
+  }
+  async function handleDelete(id) {
+    let response = await axios.delete("http://localhost:3000/product/" + id);
+    alert("delete successfully");
+    fetchData();
   }
 
   useEffect(() => {
@@ -105,8 +111,19 @@ const Create = () => {
                 <td>{element.category}</td>
                 <td>{element.price}</td>
                 <td>
-                  {" "}
-                  <button>Edit</button> <button>Read</button>
+                  <Link  to={"/edit/" + element.id}>
+                    <button>Edit</button>
+                  </Link>
+                  <Link to={"/read/" + element.id}>
+                    <button>Read</button>
+                  </Link>
+                  <button
+                    onClick={() => {
+                      handleDelete(element.id);
+                    }}
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             );
