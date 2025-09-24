@@ -14,9 +14,15 @@
     },
     {
       "id": "0290",
-      "productName": "jorden",
+      "productName": "action",
       "category": "shoes",
-      "price": "10000"
+      "price": "1"
+    },
+    {
+      "id": "426c",
+      "productName": "nike",
+      "category": "shirt",
+      "price": "1453"
     }
   ]
 }

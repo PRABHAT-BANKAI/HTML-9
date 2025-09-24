@@ -1,5 +1,6 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 
 const Update = () => {
   const [inputText, setInputText] = useState({
@@ -7,17 +8,26 @@ const Update = () => {
     category: "",
     price: "",
   });
-  const {id}= useParams()
+  const { id } = useParams();
+  const navigate = useNavigate();
 
-  function fetchData(){
+  async function fetchData() {
+    let response = await axios.get("http://localhost:3000/product/" + id);
 
-    
+    setInputText(response.data);
+  }
+  console.log(inputText);
+
+  async function handleUpdate(e) {
+    e.preventDefault();
+    let response = await axios.put("http://localhost:3000/product/" + id,inputText);
+    console.log(response);
+    alert("updated successfully");
+    navigate("/");
   }
 
-  function handleUpdate() {}
-
   useEffect(() => {
-    fetchData()
+    fetchData();
   }, []);
   return (
     <div>

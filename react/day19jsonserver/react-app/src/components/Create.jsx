@@ -10,6 +10,8 @@ const Create = () => {
   });
   const [data, setData] = useState([]);
 
+  const [show, setShow] = useState(data);
+
   async function handleAdd(e) {
     e.preventDefault();
     if (
@@ -40,6 +42,24 @@ const Create = () => {
     let response = await axios.delete("http://localhost:3000/product/" + id);
     alert("delete successfully");
     fetchData();
+  }
+  function handleAsc() {
+    console.log("hello");
+    let sortData = data.sort((a, b) => a.price - b.price);
+    setData([...sortData]);
+  }
+
+  function handleDsc() {
+    console.log("hello");
+    let sortData = data.sort((a, b) => b.price - a.price);
+    setData([...sortData]);
+  }
+
+  function handleChange(e) {
+    let filterData = data.filter(
+      (element) => element.category === e.target.value
+    );
+    setData(filterData);
   }
 
   useEffect(() => {
@@ -94,6 +114,17 @@ const Create = () => {
         </table>
       </form>
 
+      <button onClick={handleAsc}>Asc</button>
+      <button onClick={handleDsc}>Dsc</button>
+
+      <div>
+        <select onChange={handleChange} name="" id="">
+          <option value="shoes">Shoes</option>
+          <option value="clothes">Clothes</option>
+          <option value="shirt">shirt</option>
+        </select>
+      </div>
+
       <table border={""}>
         <thead>
           <tr>
@@ -111,7 +142,7 @@ const Create = () => {
                 <td>{element.category}</td>
                 <td>{element.price}</td>
                 <td>
-                  <Link  to={"/edit/" + element.id}>
+                  <Link to={"/edit/" + element.id}>
                     <button>Edit</button>
                   </Link>
                   <Link to={"/read/" + element.id}>
