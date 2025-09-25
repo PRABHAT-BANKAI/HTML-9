@@ -9,8 +9,19 @@ const Create = () => {
     price: "",
   });
   const [data, setData] = useState([]);
+  const [show, setShow] = useState([]);
+  const [search, setSearch] = useState("");
+  const [pageCount, setPageCount] = useState(1);
+  const [pageNumber, setPageNumber] = useState("");
 
-  const [show, setShow] = useState(data);
+  function handleSearch() {
+    let searchData = show.filter((element) =>
+      element.productName.trim().includes(search.trim())
+    );
+    setShow(searchData);
+
+    setSearch("");
+  }
 
   async function handleAdd(e) {
     e.preventDefault();
@@ -35,8 +46,13 @@ const Create = () => {
   }
 
   async function fetchData() {
-    let response = await axios.get("http://localhost:3000/product");
-    setData(response.data);
+    let response = await axios.get(
+      `http://localhost:3000/product?_page=${pageCount}&_per_page=2`
+    );
+    // console.log(response)
+    setPageNumber(response.data.pages);
+    setData(response.data.data);
+    setShow(response.data.data);
   }
   async function handleDelete(id) {
     let response = await axios.delete("http://localhost:3000/product/" + id);
@@ -46,25 +62,30 @@ const Create = () => {
   function handleAsc() {
     console.log("hello");
     let sortData = data.sort((a, b) => a.price - b.price);
-    setData([...sortData]);
+    setShow([...sortData]);
   }
 
   function handleDsc() {
     console.log("hello");
     let sortData = data.sort((a, b) => b.price - a.price);
-    setData([...sortData]);
+    setShow([...sortData]);
   }
 
   function handleChange(e) {
+    if (e.target.value == "all") {
+      setShow(data);
+      return;
+    }
+
     let filterData = data.filter(
       (element) => element.category === e.target.value
     );
-    setData(filterData);
+    setShow(filterData);
   }
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [pageCount]);
   return (
     <div>
       <form onSubmit={handleAdd} action="">
@@ -113,7 +134,17 @@ const Create = () => {
           </tr>
         </table>
       </form>
-
+      <div>
+        <input
+          type="text"
+          value={search}
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
+          placeholder="searching "
+        />
+        <button onClick={handleSearch}>Search</button>
+      </div>
       <button onClick={handleAsc}>Asc</button>
       <button onClick={handleDsc}>Dsc</button>
 
@@ -122,6 +153,7 @@ const Create = () => {
           <option value="shoes">Shoes</option>
           <option value="clothes">Clothes</option>
           <option value="shirt">shirt</option>
+          <option value="all">all</option>
         </select>
       </div>
 
@@ -135,7 +167,7 @@ const Create = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((element) => {
+          {show.map((element) => {
             return (
               <tr key={element.id}>
                 <td>{element.productName}</td>
@@ -161,6 +193,26 @@ const Create = () => {
           })}
         </tbody>
       </table>
+
+      <div>
+        <button
+          disabled={pageCount == 1}
+          onClick={() => {
+            setPageCount(pageCount - 1);
+          }}
+        >
+          prev
+        </button>
+        <p>{pageCount}</p>
+        <button
+          disabled={pageCount == pageNumber}
+          onClick={() => {
+            setPageCount(pageCount + 1);
+          }}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };

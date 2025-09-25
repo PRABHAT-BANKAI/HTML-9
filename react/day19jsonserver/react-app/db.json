@@ -23,6 +23,36 @@
       "productName": "nike",
       "category": "shirt",
       "price": "1453"
+    },
+    {
+      "id": "4ca5",
+      "productName": "bata",
+      "category": "shirt",
+      "price": "12001"
+    },
+    {
+      "id": "90e8",
+      "productName": "prabhat",
+      "category": "shoes",
+      "price": "3888"
+    },
+    {
+      "id": "e5dd",
+      "productName": "mokshil",
+      "category": "shirt",
+      "price": "34949"
+    },
+    {
+      "id": "70a3",
+      "productName": "gama",
+      "category": "shoes",
+      "price": "123"
+    },
+    {
+      "id": "b305",
+      "productName": "alpha",
+      "category": "shirt",
+      "price": "123123"
     }
   ]
 }
