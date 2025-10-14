@@ -6,25 +6,39 @@ const ReducerCom = () => {
   });
 
   function reducer(state, action) {
+
     switch (action.type) {
       case "inc":
-        state.value = state.value + 1;
-        break;
+        return { ...state, value: state.value + 1 };
+
       case "dec":
-        state.value = state.value - 1;
-        break;
+      return { ...state, value: state.value - 1 };
+
 
       default:
-        break;
+        return state
+ 
     }
   }
 
   return (
     <div>
       <h1>use Reducer hook</h1>
-      <p>Count:{}</p>
-      <button>Inc</button>
-      <button>Dec</button>
+      <p>Count:{state.value}</p>
+      <button
+        onClick={() => {
+          dispatch({ type: "inc" });
+        }}
+      >
+        Inc
+      </button>
+      <button
+        onClick={() => {
+          dispatch({ type: "dec" });
+        }}
+      >
+        Dec
+      </button>
     </div>
   );
 };
